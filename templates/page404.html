@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="error">
+    <h1>Sorry, there is no such page!</h1>
+    <h2 class="err">Go back to the <a href="/" class="err-link">main</a> page</h2>
+</div>
+<img src="static/img/funny-404-error-page-design.gif">
+{% endblock %}

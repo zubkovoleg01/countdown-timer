@@ -1,0 +1,287 @@
+:root {
+  --white: #fff;
+  --black: #000;
+
+  /* Primary colors*/
+  --primary-1: #2b8379;
+  --primary-2: #19a596;
+  --primary-3: #7fd1c7;
+  --primary-4: #7fd1c7;
+  --primary-5: #d0f3ef;
+
+  /* Neutral colors */
+  --neutral-1: #2c2c2c;
+  --neutral-2: #434343;
+  --neutral-3: #94868b;
+  --neutral-4: #d9cfd3;
+  --neutral-5: #f2ecee;
+
+  /* Accent-blue colors */
+  --accent-1: #970e3d;
+  --accent-2: #c43464;
+  --accent-3: #de7699;
+  --accent-4: #e6c3ce;
+  --accent-5: #fff2f7;
+}
+
+.dark-theme{
+  --primary-2: #2c2c2c;
+  --accent-4: #970e3d;
+}
+
+body {
+  font-family: "Kanit", sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color:  #f8d5e2;
+}
+
+nav{
+  background-color: #2b8379;
+  margin-top: -16px;
+  height: 100px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  flex: 1;
+}
+
+ul li a{
+  display: block;
+  text-align: center;
+  padding: 10px 0; 
+  width: 100%; 
+  text-decoration: none;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  font-size: x-large;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+nav a:hover{
+  color:#2c2c2c;
+  text-decoration: underline;
+}
+
+.major-page h1{
+  margin-left: 30%;
+  font-weight: 400;
+}
+
+.major-page p{
+  margin-left: 39%;
+  font-size: medium;
+  font-weight: 200;
+  margin-bottom: 15%;
+}
+
+.major-page a{
+  text-decoration: none;
+  color:#970e3d;
+}
+
+.major-page a:hover{
+  color: #c43464;
+}
+
+.major-page h3{
+  margin-left: 30%;
+}
+
+.timer{
+  margin-left: 30%;
+  color: var(--primary-1);
+  margin-bottom: 25px;
+}
+
+.action{
+  margin-left: 30%;
+}
+.input{
+  margin-bottom: 25px;
+  cursor: pointer;
+  border-color: var(--primary-1);
+}
+
+@keyframes btn{
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+}
+}
+
+.btn, .btn2, .btn3, .btn4, .btn5{
+  display: block;
+  width: 30%;
+  background-color: #19a596;
+  cursor: pointer;
+  height: 60px;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+  font-size: large;
+  font-weight: 800;
+}
+
+.btn::before{
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: btn 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn:active {
+  color: #19a596;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:hover:before {
+  opacity: 1;
+}
+
+.btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #19a596;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.about, .contacts, .login, .register, .posting{
+  margin-left: 10px;
+}
+
+.about h1, .contacts h1, .login h1, .register h1, .error h1, .error h2, .posting, .all_articles h2, add_post_h1{
+  font-weight: 400;
+}
+
+.about p, .contacts p, .login p, .register p, .posting p{
+  font-weight: 200;
+}
+
+.btn2, .btn3, .btn4, .btn5{
+  width: 20.5%;
+  
+}
+
+.btn2:hover{
+  background-color: var(--primary-1);
+}
+
+.btn3:hover{
+  background-color: var(--primary-1);
+}
+
+.btn4:hover{
+  background-color: var(--primary-1);
+}
+
+.btn5:hover{
+  background-color: var(--primary-1);
+}
+
+.error {
+  margin-left: 35%;
+}
+
+.err{
+  margin-left: 5%;
+}
+
+.err-link, .link_all_posts{
+  text-decoration: none;
+  color: #970e3d;
+  cursor: pointer;
+}
+
+.err-link:hover{
+  color: #c43464;
+}
+
+.all_h2{
+    margin-left: 45%;
+    color: var(--primary-1);
+}
+
+.all_posts{
+    color: var(--accent-1);
+}
+
+.link_all_posts{
+    font-weight: 600;
+    font-size: 40px;
+    margin-left: 55px;
+}
+
+.link_all_posts:hover{
+    color: #c43464;
+    text-decoration: underline;
+}
+
+.add_post_h1{
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.all_posts{
+    width: 90%;
+    margin-left: 7%;
+}
+
+.th{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.td{
+    text-decoration: none;
+    color: var(--accent-2);
+}

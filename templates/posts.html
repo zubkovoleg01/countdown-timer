@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="all_articles">
+  <h2 class="all_h2">All Articles</h2>
+  <table class="all_posts">
+  <tr>
+    <th class="th">Title</th>
+    <th class="th">URL</th>
+    <th class="th">Text</th>
+    <th class="th">Time</th>
+  </tr>
+  {% for article in articles %}
+    <tr>
+      <td class="td"><a class="td" href="{{ url_for('show_all_posts', post_id=article['url']) }}">{{ article['title'] }}</a></td>
+      <td class="td">{{ article['url'] }}</td>
+      <td class="td">{{ article['text'] }}</td>
+      <td class="td">{{ article['time'] }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}

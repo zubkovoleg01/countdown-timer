@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<h1 class="add_post_h1">Posting</h1>
+<form action="/add_post" method="post" class="posting">
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <p>Title: <input type="text" name="title" required></p>
+    <p>URL: <input type="text" name="url" required></p>
+    <p>Text: </p>
+    <p><textarea name="text" cols="40" rows="10"></textarea></p>
+    <p><input class="btn5" type="submit" value="Add article"></p>
+</form>
+<a class="link_all_posts" href="{{ url_for('show_all_posts') }}">All Articles</a>
+{% endblock %}

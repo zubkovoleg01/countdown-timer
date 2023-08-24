@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+    <div class="contacts">
+        <h1>Feedback</h1>
+        <p>To contact us, fill in the fields below:</p>
+        <form method="post" class="form-contacts">
+            <p>Name: <input type="text" name="username" required></p>
+            <p>Email: <input type="text" name="email" required></p>
+            <p>Message:</p>
+            <p><textarea name="message" cols="40" row="10"></textarea></p>
+            <p><input class="btn2" type="submit" value="Send Message"></p>
+        </form>
+    </div>
+{% endblock %}
+
+
+

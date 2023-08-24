@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<h1>Welcome, {{ username }}!</h1>
+<p>Email: {{ email }}</p>
+<p>Additional information about the user</p>
+
+<a href="/logout">Log out of your account</a>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+    <div class="major-page">
+        <h1>Welcome to the main countdown page!</h1>
+        <p>To read the terms of use, follow the <a href="{{ url_for('about') }}">link</a></p>
+
+        <h3>TIME LEFT:</h3>
+        <div class="timer" id="countdown">{{ time_difference }}</div>
+
+            <form class="action" action="/" method="POST">
+                <label for="target_date">Enter the date for the timer:</label>
+                <input class="input" type="date" id="target_date" name="target_date">
+                <button class="btn" type="submit">Set a timer</button>
+            </form>
+    </div>
+<!--    <script>-->
+<!--        function updateTimer(targetDateStr) {-->
+<!--            const targetDate = moment(targetDateStr, "YYYY-MM-DD");-->
+<!--            const now = moment();-->
+<!--            const diff = targetDate.diff(now);-->
+
+<!--            if (diff <= 0) {-->
+<!--                document.getElementById('countdown').textContent = 'Таймер истек';-->
+<!--            } else {-->
+<!--                const duration = moment.duration(diff);-->
+<!--                const days = Math.floor(duration.asDays());-->
+<!--                const hours = duration.hours();-->
+<!--                const minutes = duration.minutes();-->
+<!--                const seconds = duration.seconds();-->
+<!--                const timerStr = `${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;-->
+<!--                document.getElementById('countdown').textContent = timerStr;-->
+<!--            }-->
+<!--        }-->
+
+<!--        $('#dateForm').on('submit', function(event) {-->
+<!--            event.preventDefault();-->
+<!--            const targetDateStr = $('#target_date').val();-->
+<!--            if (targetDateStr) {-->
+<!--                updateTimer(targetDateStr);-->
+
+<!--                // Запускаем обновление таймера каждую секунду-->
+<!--                setInterval(function () {-->
+<!--                    updateTimer(targetDateStr);-->
+<!--                }, 1000);-->
+<!--            } else {-->
+<!--                alert('Выберите дату для таймера!');-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
+{% endblock %}
+
+

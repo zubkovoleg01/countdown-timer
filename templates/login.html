@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<div class="login">
+    
+    <h1>Login</h1>
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/login" method="post" class="log">
+        <p>Name: <input type="text" name="username" required></p>
+        <p>Password: <input type="text" name="password" required></p>
+        <p><input class="btn3" type="submit" value="Enter"></p>
+    </form>
+</div>
+
+{% if username and email %}
+    <p>Username: {{ username }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Message: {{ message }}</p>
+{% endif %}
+
+{% endblock %}
+
+
